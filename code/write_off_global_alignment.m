@@ -44,8 +44,8 @@ for ii = 1 : length( inds )
     V = [V ( view_rot * ga.R{ inds(ii) } * ds.shape{ inds(ii) }.lowres.V * (ds.shape{inds(ii)}.scale/sqrt(ds.N(ds.K)))...
         + repmat( [ offset*c 0 offset*r ]' , 1, size( ds.shape{ inds(ii) }.lowres.V , 2 ) ) )];
 %     alignedV = ga.R{ inds(ii) } * (ds.shape{ inds(ii) }.origV-repmat(ds.shape{ inds(ii) }.center, 1, size(ds.shape{ inds(ii) }.origV,2)))+repmat(ds.shape{ inds(ii) }.center, 1, size(ds.shape{ inds(ii) }.origV,2));
-    alignedV = ga.R{ inds(ii) } * (center(ds.shape{ inds(ii) }.origV)/scale(center(ds.shape{ inds(ii) }.origV)));
-    write_obj([ds.msc.mesh_aligned_dir ds.names{ inds(ii) } '_aligned.obj'], alignedV, ds.shape{ inds(ii) }.origF);
+    %%alignedV = ga.R{ inds(ii) } * (center(ds.shape{ inds(ii) }.origV)/scale(center(ds.shape{ inds(ii) }.origV))); % removed by jmw, temporary
+    %%write_obj([ds.msc.mesh_aligned_dir ds.names{ inds(ii) } '_aligned.obj'], alignedV, ds.shape{ inds(ii) }.origF); % removed by jmw, temporary
 %     write_off([ds.msc.mesh_aligned_dir ds.names{ inds(ii) } '_aligned.off'], alignedV, ds.shape{ inds(ii) }.origF);
 %     V = [ V ( view_rot * ga.R{ inds(ii) } * ds.shape{ inds(ii) }.lowres.V + repmat( [ offset*c 0 offset*r ]' , 1, size( ds.shape{ inds(ii) }.lowres.V , 2 ) ) ) ];
 end

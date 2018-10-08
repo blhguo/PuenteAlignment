@@ -7,7 +7,11 @@ function ind = subsample( V, N, seed )
 %   increase the number of sampled points
 
 if isempty( seed )
+<<<<<<< HEAD
     tmp               = V(:, randi(size(V,2)));
+=======
+    tmp               = V(:,randi( size(V,2) ));
+>>>>>>> d0dddb3294f936c1d498fdc04e0fae58610afc62
     D                 = pdist2( V', tmp');
     [ tmpD, tmpind ] = max( D );
     seed              = V(:, tmpind(1) ) ;

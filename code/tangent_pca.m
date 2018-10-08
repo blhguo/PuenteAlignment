@@ -23,6 +23,10 @@ disp('Running partial procrustes tangent coordinate PCA...')
 c = tangent_coords(ds, ga, k);
 [eivect, score, eival, ~, explain] = pca(c);
 write_pca_files(ds.msc.output_dir, ds.names, eivect, score, eival, explain);
+<<<<<<< HEAD
 disp('PCA done.')
 
 end
+=======
+disp('PCA done.')
+>>>>>>> d0dddb3294f936c1d498fdc04e0fae58610afc62
