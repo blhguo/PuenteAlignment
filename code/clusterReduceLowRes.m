@@ -37,7 +37,7 @@ pa = reduce(ds, pa, n_jobs);
 %save([outputPath 'session_low.mat'], '-v7.3');
 %=======
 mst     = graphminspantree( sparse( pa.d + pa.d' ) );
-ga      = globalize( pa, mst+mst', ds.base ); 
+ga      = globalize( pa, mst+mst', ds.base, type ); 
 ga.k    = k;
 
 if ds.n > 2
