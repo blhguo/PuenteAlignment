@@ -9,7 +9,7 @@ disp('Loaded!');
 jadd_path;
 
 ds.msc.output_dir = outputPath;
-ds.msc.mesh_aligned_dir = [outputPath 'aligned/'];
+ds.msc.mesh_aligned_dir = [outputPath, 'aligned' , filesep]; %%%% for Windows
 
 %% Compute the edges in the MST with higher number of points
 pa_tmp = localize(ga);
